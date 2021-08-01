@@ -1,0 +1,36 @@
+#:import Clipboard kivy.core.clipboard.Clipboard
+<decoderlayout>:
+    orientation: 'vertical'
+    padding: "5dp"
+
+
+    MDTextField:
+        id: text_field
+        hint_text: "Text to encode or decode"
+        multiline: True
+        size_hint: 1, 1
+        font_size: "22"
+        current_hint_text_color: 1,1,1,1
+        text_color: 1,1,1,1 # Text color
+        text: Clipboard.paste()
+        
+    
+    MDFloatingActionButtonSpeedDial:
+        size_hint:0.15, 0.15
+        data: app.data
+        root_button_anim: True
+        #Color stuff
+        label_text_color: 1,1,1,1 # Text color
+        #bg_color_stack_button: 1,0,0,1 # bg of icon
+        #bg_color_root_button: 1,0,0,1 # speed dial bg
+        #color_icon_root_button: 1,0,0,1 # speed dial text color
+        #color_icon_stack_button: 1,0,0,1 # icond text color
+        #bg_hint_color: 1,0,0,1 icon bgcolor
+
+        #Pushing the buttons
+        callback: app.callback
+
+        # Open or Close
+        #on_open: app.open()
+        #on_close: app.close()
+
